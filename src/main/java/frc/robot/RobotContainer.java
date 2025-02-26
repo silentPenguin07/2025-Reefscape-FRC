@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-//import frc.robot.commands.CoralElevatorSetPositionCommand;
+import frc.robot.commands.CoralElevatorSetPositionCommand;
 //import frc.robot.robot_subsystems.AlgaeIntakeSubsystem;
-//import frc.robot.robot_subsystems.CoralElevatorSubsystem;
+import frc.robot.robot_subsystems.CoralElevatorSubsystem;
 import frc.robot.robot_subsystems.DriveSubsystem;
 //import frc.robot.robot_subsystems.CoralIntakeSubsystem;
 
@@ -17,7 +17,7 @@ public class RobotContainer {
     public static final double GAMEPAD_AXIS_THRESHOLD = 0.2;
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
     //private final CoralIntakeSubsystem intakeSubsystem = new CoralIntakeSubsystem();
-    //private final CoralElevatorSubsystem coralElevatorSubsystem = new CoralElevatorSubsystem();
+    private final CoralElevatorSubsystem coralElevatorSubsystem = new CoralElevatorSubsystem();
     //private final AlgaeIntakeSubsystem algaeIntakeSubsystem = new AlgaeIntakeSubsystem();
     
     Joystick driverGamepad = new Joystick(Constants.Ports.CONTROLLER.DRIVER_JOYSTICK);
@@ -68,18 +68,18 @@ public class RobotContainer {
     {
         return driveSubsystem;
     }
-/* 
+    /* 
     public CoralIntakeSubsystem getCoralIntakeSubsystem()
     {
         return intakeSubsystem;
-    }
+    } */
 
     public CoralElevatorSubsystem getCoralElevatorSubsystem()
     {
         return coralElevatorSubsystem;
     }
-    */
-/* 
+    
+    /*
     public AlgaeIntakeSubsystem getAlgaeIntakeSubsystem()
     {
         return algaeIntakeSubsystem;

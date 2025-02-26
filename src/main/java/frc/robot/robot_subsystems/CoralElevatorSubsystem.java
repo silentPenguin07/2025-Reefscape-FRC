@@ -1,4 +1,4 @@
-/*
+
 package frc.robot.robot_subsystems;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -10,6 +10,7 @@ import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
 
@@ -31,21 +32,29 @@ public class CoralElevatorSubsystem extends SubsystemBase {
         m_elevator_follower = new SparkMax(Constants.ElevatorConstants.ELEVATOR_FOLLOWER_MOTOR_ID, MotorType.kBrushless);
 
         // configure the sparkmaxes
-        SparkMaxConfig elevator_leader = new SparkMaxConfig();
-        SparkMaxConfig elevator_follower = new SparkMaxConfig();
+        SparkMaxConfig leaderConfig = new SparkMaxConfig();
+        SparkMaxConfig followerConfig = new SparkMaxConfig();
+        boolean invert = false;
 
-        // follower turns in opposite direction because it's on the other end of shaft
-        elevator_follower.follow(m_elevator_leader, true);
+        leaderConfig
+            .inverted(invert)
+            .idleMode(IdleMode.kBrake)
+            .smartCurrentLimit(Constants.ElevatorConstants.ELEVATOR_MOTOR_CURRENT_LIMIT);
+        leaderConfig.closedLoop
+            .feedbackSensor(FeedbackSensor.kPrimaryEncoder)
+            .p(Constants.ElevatorConstants.kP);
+        m_elevator_leader.configure(leaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+        m_elevator_leader.clearFaults();
+
+        followerConfig
+            //.inverted(!invert)
+            .follow(m_elevator_leader, invert) // follower in opposing direction but follows same Closed Loop
+            .idleMode(IdleMode.kBrake)
+            .smartCurrentLimit(Constants.ElevatorConstants.ELEVATOR_MOTOR_CURRENT_LIMIT);
+        m_elevator_follower.configure(followerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+        m_elevator_follower.clearFaults();
+
         m_elevator_leader.getEncoder().setPosition(0.0);
-
-        elevator_leader.idleMode(IdleMode.kBrake);
-        elevator_follower.idleMode(IdleMode.kBrake);
-
-        // apply configurations
-        m_elevator_leader.configure(elevator_leader, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-        m_elevator_follower.configure(elevator_follower, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-        
-        
     }
 
 
@@ -80,4 +89,3 @@ public class CoralElevatorSubsystem extends SubsystemBase {
     }
 
 }
-*/

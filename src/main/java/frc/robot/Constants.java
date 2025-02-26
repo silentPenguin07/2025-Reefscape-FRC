@@ -24,8 +24,7 @@ public final class Constants {
         public static final int ELEVATOR_LEAD_MOTOR_ID = 10;
         public static final int ELEVATOR_FOLLOWER_MOTOR_ID = 11;
         public static final int CORAL_INTAKE_MOTOR_ID = 12;
-        public static final int ALGAE_INTAKE_LEADER_MOTOR_ID = 13;
-        public static final int ALGAE_INTAKE_FOLLOWER_MOTOR_ID = 14;
+        public static final int ELEVATOR_MOTOR_CURRENT_LIMIT = 40;
 
         public static final double ELEVATOR_ARM_MAX = 90;
         public static final double ELEVATOR_ARM_MIN = 0;

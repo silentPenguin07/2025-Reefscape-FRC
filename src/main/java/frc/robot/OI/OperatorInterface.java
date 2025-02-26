@@ -5,7 +5,7 @@ import frc.robot.CommandFactory;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 //import frc.robot.commands.AlgaeIntakeCommand;
-//import frc.robot.commands.CoralElevatorSetPositionCommand;
+import frc.robot.commands.CoralElevatorSetPositionCommand;
 import frc.robot.commands.DriveCommand;
 //import frc.robot.commands.CoralIntakeCommand;
 import frc.robot.commands.XCommand;
@@ -35,11 +35,10 @@ public class OperatorInterface {
                 }
                 */
                 // ARM TO POSITIONS
-                /*
+                
                 new JoystickButton(operator, Constants.Controller.Y_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_HIGH, robotContainer.getCoralElevatorSubsystem()));
                 new JoystickButton(operator, Constants.Controller.X_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_MID, robotContainer.getCoralElevatorSubsystem()));
                 new JoystickButton(operator, Constants.Controller.A_BUTTON).onTrue(new CoralElevatorSetPositionCommand(Constants.ElevatorConstants.ELEVATOR_ANGLE_LOW, robotContainer.getCoralElevatorSubsystem()));
-*/
                 
                 /*
                 driver controls
