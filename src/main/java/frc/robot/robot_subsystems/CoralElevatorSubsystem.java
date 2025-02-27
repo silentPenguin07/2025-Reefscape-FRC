@@ -61,7 +61,7 @@ public class CoralElevatorSubsystem extends SubsystemBase {
     public double getElevatorPosition()
     {
         
-        return m_elevator_leader.getAbsoluteEncoder().getPosition(); // maybe just getEncoder()???
+        return m_elevator_leader.getEncoder().getPosition(); // maybe just getEncoder()???
     }
 
     public void setElevatorSpeed(double speed)

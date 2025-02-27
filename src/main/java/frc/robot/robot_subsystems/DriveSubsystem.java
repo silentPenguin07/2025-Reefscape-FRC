@@ -41,7 +41,7 @@ public class DriveSubsystem extends EntechSubsystem {
     // these values should probably be moved to the constants file but I'm too lazy
     public static final double FRONT_LEFT_VIRTUAL_OFFSET_RADIANS = 2.32759093;
     public static final double FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS = 1.489458748; 
-    public static final double REAR_LEFT_VIRTUAL_OFFSET_RADIANS = 5.80897935;
+    public static final double REAR_LEFT_VIRTUAL_OFFSET_RADIANS = -2.8 ; //5.80897935
     public static final double REAR_RIGHT_VIRTUAL_OFFSET_RADIANS = 0.7840019;
 
     public static final int GYRO_ORIENTATION = -1; // might be able to merge with kGyroReversed

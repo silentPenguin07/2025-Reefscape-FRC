@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.CommandFactory;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
+//import frc.robot.commands.ClimbCommand;
 //import frc.robot.commands.AlgaeIntakeCommand;
 import frc.robot.commands.CoralElevatorSetPositionCommand;
 import frc.robot.commands.DriveCommand;
@@ -18,6 +19,9 @@ public class OperatorInterface {
                 /*
                 operator controls
                 */
+                //new JoystickButton(operator, Constants.Controller.LEFT_BUMPER).whileTrue(new ClimbCommand(robotContainer.getClimbSubsystem(), false));
+                //new JoystickButton(operator, Constants.Controller.RIGHT_BUMPER).whileTrue(new ClimbCommand(robotContainer.getClimbSubsystem(), true));
+
                 // coral intake/outtake
                 /*
                 new JoystickButton(operator, Constants.Controller.RIGHT_BUMPER).whileTrue(new CoralIntakeCommand(robotContainer.getCoralIntakeSubsystem(), false));
