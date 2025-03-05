@@ -6,19 +6,18 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import frc.robot.commands.CoralElevatorSetPositionCommand;
 //import frc.robot.robot_subsystems.AlgaeIntakeSubsystem;
 import frc.robot.robot_subsystems.CoralElevatorSubsystem;
 import frc.robot.robot_subsystems.DriveSubsystem;
 //import frc.robot.commands.ClimbCommand;
 //import frc.robot.robot_subsystems.ClimbSubsystem;
-//import frc.robot.robot_subsystems.CoralIntakeSubsystem;
+import frc.robot.robot_subsystems.CoralIntakeSubsystem;
 
 public class RobotContainer {
     
     public static final double GAMEPAD_AXIS_THRESHOLD = 0.2;
     private final DriveSubsystem driveSubsystem = new DriveSubsystem();
-    //private final CoralIntakeSubsystem intakeSubsystem = new CoralIntakeSubsystem();
+    private final CoralIntakeSubsystem coralIntakeSubsystem = new CoralIntakeSubsystem();
     private final CoralElevatorSubsystem coralElevatorSubsystem = new CoralElevatorSubsystem();
     //private final ClimbSubsystem climbSubsystem = new ClimbSubsystem();
     //private final AlgaeIntakeSubsystem algaeIntakeSubsystem = new AlgaeIntakeSubsystem();
@@ -71,11 +70,11 @@ public class RobotContainer {
     {
         return driveSubsystem;
     }
-    /* 
+    
     public CoralIntakeSubsystem getCoralIntakeSubsystem()
     {
-        return intakeSubsystem;
-    } */
+        return coralIntakeSubsystem;
+    }
 
     public CoralElevatorSubsystem getCoralElevatorSubsystem()
     {

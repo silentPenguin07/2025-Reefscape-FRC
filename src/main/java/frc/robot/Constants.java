@@ -21,9 +21,10 @@ public final class Constants {
 
     public static final class ElevatorConstants {
         // TODO: Change these constants
-        public static final int ELEVATOR_LEAD_MOTOR_ID = 10;
-        public static final int ELEVATOR_FOLLOWER_MOTOR_ID = 11;
-        public static final int CORAL_INTAKE_MOTOR_ID = 12;
+        public static final int ELEVATOR_LEAD_MOTOR_ID = 11;
+        public static final int ELEVATOR_FOLLOWER_MOTOR_ID = 10;
+        public static final int CORAL_LEAD_INTAKE_MOTOR_ID = 12;
+        public static final int CORAL_FOLLOWER_INTAKE_MOTOR_ID = 13;
         public static final int ELEVATOR_MOTOR_CURRENT_LIMIT = 40;
 
         public static final double ELEVATOR_ARM_MAX = 90;
@@ -34,7 +35,7 @@ public final class Constants {
 
         // elevator angles
         public static final double ELEVATOR_ANGLE_LOW = 0;
-        public static final double ELEVATOR_ANGLE_MID = 40;
+        public static final double ELEVATOR_ANGLE_MID = 20;
         public static final double ELEVATOR_ANGLE_HIGH = 50;
     }
 

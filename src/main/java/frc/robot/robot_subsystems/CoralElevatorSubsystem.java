@@ -48,7 +48,7 @@ public class CoralElevatorSubsystem extends SubsystemBase {
 
         followerConfig
             //.inverted(!invert)
-            .follow(m_elevator_leader, invert) // follower in opposing direction but follows same Closed Loop
+            .follow(m_elevator_leader, true) // follower in opposing direction but follows same Closed Loop
             .idleMode(IdleMode.kBrake)
             .smartCurrentLimit(Constants.ElevatorConstants.ELEVATOR_MOTOR_CURRENT_LIMIT);
         m_elevator_follower.configure(followerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
